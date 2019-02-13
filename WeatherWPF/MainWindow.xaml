@@ -37,13 +37,16 @@
         <materialDesign:Card Grid.Column="1" Grid.Row="3" Height="180" Background="Aqua" >
             <StackPanel>
                 <materialDesign:PackIcon Kind="WeatherCloudy" Height="50" Width="100"  HorizontalAlignment="Center"/>
-                <TextBlock x:Name="temp" Text="" FontSize="15" TextAlignment="Center"/>
+                <TextBlock x:Name="temp" Text="" FontSize="17" TextAlignment="Center" Height="41"/>
+           
+
 
             </StackPanel>
         </materialDesign:Card>
         <materialDesign:Card Grid.Column="3" Grid.Row="3" Height="180" Background="Aqua" >
             <StackPanel>
                 <materialDesign:PackIcon Kind="WeatherCloudy" Height="50" Width="100" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="temp1" Text="" FontSize="17" TextAlignment="Center" Height="41"/>
 
             </StackPanel>
         </materialDesign:Card>
@@ -51,6 +54,7 @@
         <materialDesign:Card Grid.Column="5" Grid.Row="3" Height="180"  Background="Aqua">
             <StackPanel>
                 <materialDesign:PackIcon Kind="WeatherCloudy" Height="50" Width="100" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="temp2" Text="" FontSize="17" TextAlignment="Center" Height="41"/>
 
             </StackPanel>
         </materialDesign:Card>
@@ -58,6 +62,7 @@
         <materialDesign:Card Grid.Column="7" Grid.Row="3" Height="180" Background="Aqua">
             <StackPanel>
                 <materialDesign:PackIcon Kind="WeatherCloudy" Height="50" Width="100" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="temp3" Text="" FontSize="17" TextAlignment="Center" Height="41"/>
 
             </StackPanel>
         </materialDesign:Card>
@@ -65,6 +70,7 @@
         <materialDesign:Card Grid.Column="9" Grid.Row="3" Height="180"  Background="Aqua">
             <StackPanel>
                 <materialDesign:PackIcon Kind="WeatherCloudy" Height="50" Width="100" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="temp4" Text="" FontSize="17" TextAlignment="Center" Height="41"/>
 
             </StackPanel>
         </materialDesign:Card>
@@ -72,6 +78,7 @@
         <materialDesign:Card Grid.Column="11" Grid.Row="3" Height="180"  Background="Aqua">
             <StackPanel>
                 <materialDesign:PackIcon Kind="WeatherCloudy" Height="50" Width="100" HorizontalAlignment="Center" />
+                <TextBlock x:Name="temp5" Text="" FontSize="17" TextAlignment="Center" Height="41"/>
 
             </StackPanel>
         </materialDesign:Card>
@@ -79,6 +86,7 @@
         <materialDesign:Card Grid.Column="13" Grid.Row="3" Height="180" Background="Aqua">
             <StackPanel>
                 <materialDesign:PackIcon Kind="WeatherCloudy" Height="50" Width="100" HorizontalAlignment="Center" />
+                <TextBlock x:Name="temp6" Text="" FontSize="17" TextAlignment="Center" Height="41"/>
 
             </StackPanel>
         </materialDesign:Card>

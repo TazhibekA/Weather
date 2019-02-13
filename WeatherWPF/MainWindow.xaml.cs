@@ -25,22 +25,32 @@ namespace WeatherWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private WeatherResponse GetJson(string city)
+         Weather weather = new Weather();
+        private void GetJson(string city)
         {
-            string url = $"http://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid=67a3dc729fe825c7287ebe1fe4a57585";
-            HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
+            //string url = $"";
 
-            HttpWebResponse httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            //HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
 
-            string response;
+            //HttpWebResponse httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
 
-            using (StreamReader streamReader = new StreamReader(httpWebResponse.GetResponseStream()))
+            //string response;
+
+            //using (StreamReader streamReader = new StreamReader(httpWebResponse.GetResponseStream()))
+            //{
+            //    response = streamReader.ReadToEnd();
+            //}
+
+            //WeatherResponse weatherResponse = JsonConvert.DeserializeObject<WeatherResponse>(response);
+            //return weatherResponse;
+            using (WebClient client = new WebClient())
             {
-                response = streamReader.ReadToEnd();
-            }
+                weather = JsonConvert.DeserializeObject<Weather>(client.DownloadString($"http://api.apixu.com/v1/forecast.json?key=cfaae3b46bbb4266bd155654190702&q={city}&days=7"));
+                
+ 
 
-            WeatherResponse weatherResponse = JsonConvert.DeserializeObject<WeatherResponse>(response);
-            return weatherResponse;
+            }
+            
         }
 
         public MainWindow()
@@ -50,8 +60,24 @@ namespace WeatherWPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            WeatherResponse weatherResponse = GetJson(city.Text);
-            temp.Text = weatherResponse.Main.Temp.ToString();
+            GetJson(city.Text);
+            temp.Text = weather.forecast.forecastday[0].day.maxtemp_c.ToString();
+            temp1.Text = weather.forecast.forecastday[1].day.maxtemp_c.ToString();
+            temp2.Text = weather.forecast.forecastday[2].day.maxtemp_c.ToString();
+            temp3.Text = weather.forecast.forecastday[3].day.maxtemp_c.ToString();
+            temp4.Text = weather.forecast.forecastday[4].day.maxtemp_c.ToString();
+            temp5.Text = weather.forecast.forecastday[5].day.maxtemp_c.ToString();
+            temp6.Text = weather.forecast.forecastday[6].day.maxtemp_c.ToString();
+            //temp1.Text = weatherResponse.Main.Temp.ToString();
+            //temp2.Text = weatherResponse.Main.Temp.ToString();
+            //temp3.Text = weatherResponse.Main.Temp.ToString();
+            //temp4.Text = weatherResponse.Main.Temp.ToString();
+            //temp5.Text = weatherResponse.Main.Temp.ToString();
+            //temp6.Text = weatherResponse.Main.Temp.ToString();
+
+
+
+
         }
     }
 }
